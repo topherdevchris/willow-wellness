@@ -1,0 +1,43 @@
+---
+
+import profile from "../assets/images/willow-bud.jpg";
+---
+<section id="about" class="bg-cream py-14 md:py-20">
+  <div class="container grid gap-8 md:grid-cols-[360px_1fr] md:gap-12 items-center">
+    <!-- Photo -->
+    <div class="rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-sage/30">
+      <img
+        src={profile.src}
+        alt="Dominique Newman, LCSW"
+        class="w-full h-full object-cover"
+        width="720"
+        height="720"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Copy -->
+    <div>
+      <h2 class="font-serif text-deep text-3xl md:text-4xl font-semibold mb-3">
+        Meet Dominique Newman, LCSW
+      </h2>
+      <p class="mb-3">
+        <em>Short welcoming intro (placeholder).</em> Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Morbi posuere sapien vitae sem feugiat, vel luctus nibh iaculis.
+      </p>
+      <p class="mb-3">
+        Drawing from evidence-based approaches including CBT and mindfulness, Dominique provides a calm,
+        collaborative space for growth and healing. Placeholder copy for 2–3 sentences to mirror
+        Psychology Today / Alma tone.
+      </p>
+      <p class="text-deep/90">
+        Individuals &amp; couples • Trauma • Anxiety • Depression • Life transitions
+      </p>
+    </div>
+  </div>
+
+  <!-- subtle divider -->
+  <div class="container mt-12 md:mt-16">
+    <div class="h-px bg-gradient-to-r from-transparent via-deep/25 to-transparent"></div>
+  </div>
+</section>

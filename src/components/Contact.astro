@@ -1,0 +1,76 @@
+---
+import bg from "../assets/images/willow-branch-bud.jpeg";
+
+const almaUrl = "https://secure.helloalma.com/providers/dominique-newman/";
+// Replace with the real email/phone when ready:
+const email = "hello@willowwellness.example";
+const phone = "(555) 123-4567";
+---
+<section id="contact" class="relative isolate">
+  <!-- Background -->
+  <img
+    src={bg.src}
+    alt="Willow tree"
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
+  />
+  <div class="absolute inset-0 -z-10 bg-cream/85"></div>
+
+  <div class="container py-16 md:py-24">
+    <div class="mx-auto max-w-4xl grid gap-10 md:grid-cols-2">
+      <!-- Contact info + CTA -->
+      <div>
+        <h2 class="font-serif text-deep text-3xl md:text-4xl font-semibold mb-3">
+          Get in Touch
+        </h2>
+        <p class="text-ink/90 mb-6">
+          Have questions or ready to get started? Reach out directly or book a session through Alma.
+        </p>
+
+        <div class="space-y-3 mb-6">
+          <p><span class="font-medium text-deep">Email:</span>
+            <a href={`mailto:${email}`} class="text-deep underline decoration-deep/40 underline-offset-2 hover:decoration-deep">
+              {email}
+            </a>
+          </p>
+          <p><span class="font-medium text-deep">Phone:</span>
+            <a href={`tel:${phone.replace(/[^0-9]/g, "")}`} class="text-deep underline decoration-deep/40 underline-offset-2 hover:decoration-deep">
+              {phone}
+            </a>
+          </p>
+        </div>
+
+        <a
+          href={almaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block rounded-full border border-deep/30 bg-cream/90 px-5 py-2.5 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors"
+        >
+          View availability &amp; book via Alma
+        </a>
+      </div>
+
+      <!-- Simple contact form (optional; no backend yet) -->
+      <form class="rounded-2xl bg-cream/95 backdrop-blur p-5 md:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-deep/10">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-ink/90 mb-1">Name</label>
+          <input id="name" name="name" type="text" class="w-full rounded-lg border border-deep/20 bg-white px-3 py-2 outline-none focus:border-deep/50" placeholder="Your full name" />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-ink/90 mb-1">Email</label>
+          <input id="email" name="email" type="email" class="w-full rounded-lg border border-deep/20 bg-white px-3 py-2 outline-none focus:border-deep/50" placeholder="you@example.com" />
+        </div>
+        <div class="mb-5">
+          <label for="message" class="block text-sm font-medium text-ink/90 mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full rounded-lg border border-deep/20 bg-white px-3 py-2 outline-none focus:border-deep/50" placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-full border border-deep/30 bg-cream/90 px-5 py-2.5 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors">
+          Send
+        </button>
+        <p class="mt-2 text-xs text-ink/70">Submitting this form does not book an appointment. For scheduling, please use Alma.</p>
+      </form>
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-12 md:mt-16 h-px bg-gradient-to-r from-transparent via-deep/25 to-transparent"></div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+const nav = [
+  { label: "About", href: "#about" },
+  { label: "Specialties", href: "#specialties" },
+  { label: "Insurance & Fees", href: "#insurance" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-cream/80 backdrop-blur border-b border-deep/10">
+  <div class="container h-16 flex items-center justify-between">
+    <!-- Wordmark -->
+    <a href="#home" class="font-serif text-deep text-2xl md:text-3xl font-semibold tracking-tight">
+      Willow Wellness
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      {nav.map((n) => (
+        <a href={n.href} class="text-[15px] font-medium text-ink hover:text-deep transition-colors">
+          {n.label}
+        </a>
+      ))}
+      <a
+        href="#book"
+        class="rounded-full border border-deep/30 bg-cream/70 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors"
+      >
+        Book a Session
+      </a>
+    </nav>
+  </div>
+</header>

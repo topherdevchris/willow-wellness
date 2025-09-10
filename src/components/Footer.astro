@@ -1,0 +1,40 @@
+---
+import logo from "../assets/logo/logo-wreath.png";
+---
+<footer class="bg-deep text-cream">
+  <div class="container py-6 md:py-8 grid gap-6 md:grid-cols-[auto_1fr_auto] items-center">
+    <!-- Logo -->
+    <div class="flex justify-center md:justify-start">
+      <img src={logo.src} alt="Willow Wellness" class="w-28 h-auto" />
+    </div>
+
+    <!-- Nav links -->
+    <nav class="flex flex-wrap justify-center gap-6 text-sm md:justify-center">
+      <a href="#about" class="hover:text-sage transition-colors">About</a>
+      <a href="#specialties" class="hover:text-sage transition-colors">Specialties</a>
+      <a href="#insurance" class="hover:text-sage transition-colors">Insurance &amp; Fees</a>
+      <a href="#contact" class="hover:text-sage transition-colors">Contact</a>
+    </nav>
+
+    <!-- Book CTA -->
+    <div class="flex justify-center md:justify-end">
+      <a
+        href="https://secure.helloalma.com/providers/dominique-newman/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full border border-cream/40 bg-cream/10 px-4 py-2 text-sm font-medium text-cream hover:bg-sage/30 hover:text-deep transition-colors"
+      >
+        Book a Session
+      </a>
+    </div>
+  </div>
+
+  <!-- Divider line -->
+  <div class="h-px bg-cream/20"></div>
+
+  <!-- Bottom strip -->
+  <div class="container py-4 flex flex-col md:flex-row items-center justify-between text-xs text-cream/70 gap-3">
+    <p>&copy; {new Date().getFullYear()} Willow Wellness. All rights reserved.</p>
+    <p>Site by Topherdev Studio</p>
+  </div>
+</footer>
