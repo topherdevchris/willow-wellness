@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import NewPatientNotice from "../components/NewPatientNotice.astro";
 const { title = 'Willow Wellness', description = 'Compassionate counseling for your well‑being' } = Astro.props;
 ---
 <html lang="en" class="bg-cream text-ink">
@@ -8,11 +9,18 @@ const { title = 'Willow Wellness', description = 'Compassionate counseling for y
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+    <link rel="manifest" href="/site.webmanifest?v=2" />
+    <meta name="theme-color" content="#2E4A3B" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body class="min-h-screen antialiased font-sans">
     <slot />
+    <NewPatientNotice />
   </body>
 </html>

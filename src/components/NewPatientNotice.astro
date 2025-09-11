@@ -1,0 +1,70 @@
+---
+/* Lightweight modal: opens when any element with [data-book-cta] is clicked */
+---
+<div
+  id="new-patient-modal"
+  class="fixed inset-0 z-[60] hidden items-center justify-center"
+  aria-hidden="true"
+>
+  <!-- Overlay (click to close) -->
+  <button
+    id="modal-overlay"
+    class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+    aria-label="Close notice"
+  ></button>
+
+  <!-- Panel -->
+  <div
+    class="relative z-[61] w-[92vw] max-w-md rounded-2xl bg-cream p-6 shadow-xl border border-deep/15"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="npn-title"
+  >
+    <h3 id="npn-title" class="font-serif text-deep text-xl font-semibold mb-2">
+      Not currently accepting new patients
+    </h3>
+    <p class="text-ink/90 mb-5">
+      Please check back soon or reach out if you have questions.
+    </p>
+    <div class="flex justify-end">
+      <button
+        id="modal-ok"
+        class="rounded-full border border-deep/30 bg-cream/90 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Tiny vanilla JS to handle open/close
+  const modal = document.getElementById("new-patient-modal");
+  const overlay = document.getElementById("modal-overlay");
+  const okBtn = document.getElementById("modal-ok");
+
+  function openModal() {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+  function closeModal() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  // Open on any [data-book-cta]
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-book-cta]");
+    if (t) {
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+  // Close on overlay / OK / Escape
+  overlay?.addEventListener("click", closeModal);
+  okBtn?.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+</script>
