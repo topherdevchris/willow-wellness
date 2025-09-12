@@ -20,7 +20,7 @@ import { SITE, NAV } from "../site.config";
     </a>
 
     <!-- Nav -->
-    <nav class="hidden md:flex items-center gap-8">
+    <nav class="hidden min-[840px]:flex items-center gap-7 max-[960px]:gap-5">
       {NAV.map((n) => (
         <a href={n.href} class="text-[15px] font-medium text-ink hover:text-deep transition-colors
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
@@ -31,7 +31,8 @@ import { SITE, NAV } from "../site.config";
       <button
         type="button"
         data-book-cta
-        class="rounded-full border border-deep/30 bg-cream/70 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors
+        class="hidden min-[840px]:inline-flex
+            rounded-full border border-deep/30 bg-cream/70 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
             focus-visible:ring-offset-2 focus-visible:ring-offset-bg">
         {SITE.bookCta}
