@@ -2,6 +2,8 @@
 export const SITE = {
   name: "Willow Wellness",
   tagline: "A supportive space for your well-being.", //"Compassionate counseling for your well-being"
+  description: "Private online therapy with Dominique Newman. Supporting individuals and couples with evidence-based mental health counseling across New York.",
+  url: "https://domainnamehere.com",
   bookCta: "Book a Session",
   acceptingNewPatients: false, // keep modal behavior by default
   contact: {
@@ -13,7 +15,8 @@ export const SITE = {
   },
   images: {
     logoAlt: "Business logo",
-    profileAlt: "Profile photo of the practitioner",
+    profileAlt: "Headshot of the practitioner",
+    ogImage: "/og-image.jpg",
   },
   profileShape: "circle", // options: "circle" | "rounded",
   modal: {

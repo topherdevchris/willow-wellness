@@ -12,22 +12,28 @@ import { SITE, NAV } from "../site.config";
 <header class="sticky top-0 z-50 bg-cream/80 backdrop-blur border-b border-deep/10">
   <div class="container h-16 flex items-center justify-between">
     <!-- Wordmark -->
-    <a href="#home" class="font-serif text-deep text-2xl md:text-3xl font-semibold tracking-tight">
+    <a href="#home" class="font-serif text-deep text-2xl md:text-3xl font-semibold tracking-tight
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
+          focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-md">
       {SITE.name}
+      <span class="sr-only">Home</span>
     </a>
 
     <!-- Nav -->
     <nav class="hidden md:flex items-center gap-8">
       {NAV.map((n) => (
-        <a href={n.href} class="text-[15px] font-medium text-ink hover:text-deep transition-colors">
+        <a href={n.href} class="text-[15px] font-medium text-ink hover:text-deep transition-colors
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
+            focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-md">
           {n.label}
         </a>
       ))}
       <button
         type="button"
         data-book-cta
-        class="rounded-full border border-deep/30 bg-cream/70 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors"
-      >
+        class="rounded-full border border-deep/30 bg-cream/70 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
+            focus-visible:ring-offset-2 focus-visible:ring-offset-bg">
         {SITE.bookCta}
     </button>
     </nav>

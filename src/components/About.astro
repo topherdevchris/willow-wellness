@@ -1,6 +1,6 @@
 ---
 import { SITE } from "../site.config";
-
+import { Image } from "astro:assets";
 import profile from "../assets/images/profile.jpg";
 
 const shapeClass = SITE.profileShape === "circle" ? "rounded-full" : "rounded-xl";
@@ -10,20 +10,21 @@ const shapeClass = SITE.profileShape === "circle" ? "rounded-full" : "rounded-xl
   <div class="container py-16 md:py-24 grid gap-12 md:grid-cols-[auto_1fr] items-center"> <!-- md:grid-cols-2 -->
     <!-- Profile image -->
     <div class="flex justify-center md:justify-end">
-      <img
-        src={profile.src}
+      <Image
+        src={profile}
         alt={SITE.images.profileAlt}
         class=`w-60 h-60 md:w-72 md:h-72 object-cover shadow-lg ${shapeClass}`
         width="600"
         height="600"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
       />
     </div>
 
     <!-- About v1 -->
      <div>
       <h2 class="font-serif text-deep text-3xl md:text-4xl font-semibold mb-3">
-        Meet Dominique Newman, LCSW
+        Meet Dominique Newman, LMHC
       </h2>
       <p class="mb-3">
         <em>Short welcoming intro (placeholder).</em> Lorem ipsum dolor sit amet, consectetur

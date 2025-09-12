@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import bg from "../assets/images/willow-branch-bud.jpeg";
 
 const almaUrl = "https://secure.helloalma.com/providers/dominique-newman/";
@@ -8,8 +9,8 @@ const phone = "(555) 123-4567";
 ---
 <section id="contact" class="relative isolate">
   <!-- Background -->
-  <img
-    src={bg.src}
+  <Image
+    src={bg}
     alt="Willow tree"
     class="absolute inset-0 -z-10 h-full w-full object-cover"
   />
@@ -28,7 +29,9 @@ const phone = "(555) 123-4567";
 
         <div class="space-y-3 mb-6">
           <p><span class="font-medium text-deep">Email:</span>
-            <a href={`mailto:${email}`} class="text-deep underline decoration-deep/40 underline-offset-2 hover:decoration-deep">
+            <a href={`mailto:${email}`} class="text-deep underline decoration-deep/40 underline-offset-2 hover:decoration-deep
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
+              focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-[6px]">
               {email}
             </a>
           </p>
