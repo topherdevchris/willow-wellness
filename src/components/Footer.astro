@@ -1,11 +1,12 @@
 ---
 import logo from "../assets/logo/logo-wreath.png";
+import { SITE } from "../site.config";
 ---
 <footer class="bg-deep text-cream">
   <div class="container py-6 md:py-8 grid gap-6 md:grid-cols-[auto_1fr_auto] items-center">
     <!-- Logo -->
     <div class="flex justify-center md:justify-start">
-      <img src={logo.src} alt="Willow Wellness" class="w-28 h-auto" />
+      <img src={logo.src} alt={SITE.images.logoAlt} class="w-28 h-auto" />
     </div>
 
     <!-- Nav links -->
@@ -42,7 +43,7 @@ import logo from "../assets/logo/logo-wreath.png";
 
   <!-- Bottom strip -->
   <div class="container py-4 flex flex-col md:flex-row items-center justify-between text-xs text-cream/70 gap-3">
-    <p>&copy; {new Date().getFullYear()} Willow Wellness. All rights reserved.</p>
-    <p>Site by Topherdev Studio</p>
+    <p>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
+    <p>{SITE.footer.credit}</p>
   </div>
 </footer>

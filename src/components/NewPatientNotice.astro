@@ -1,5 +1,7 @@
 ---
 /* Lightweight modal: opens when any element with [data-book-cta] is clicked */
+
+import { SITE } from "../site.config";
 ---
 <div
   id="new-patient-modal"
@@ -21,17 +23,17 @@
     aria-labelledby="npn-title"
   >
     <h3 id="npn-title" class="font-serif text-deep text-xl font-semibold mb-2">
-      Not currently accepting new patients
+      {SITE.modal.title}
     </h3>
     <p class="text-ink/90 mb-5">
-      Please check back soon or reach out if you have questions.
+      {SITE.modal.message}
     </p>
     <div class="flex justify-end">
       <button
         id="modal-ok"
         class="rounded-full border border-deep/30 bg-cream/90 px-4 py-2 text-[15px] font-medium text-deep hover:bg-sage/30 transition-colors"
       >
-        OK
+        {SITE.modal.ok}
       </button>
     </div>
   </div>

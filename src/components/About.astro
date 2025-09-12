@@ -1,23 +1,27 @@
 ---
+import { SITE } from "../site.config";
 
-import profile from "../assets/images/willow-bud.jpg";
+import profile from "../assets/images/profile.jpg";
+
+const shapeClass = SITE.profileShape === "circle" ? "rounded-full" : "rounded-xl";
 ---
-<section id="about" class="bg-cream py-14 md:py-20">
-  <div class="container grid gap-8 md:grid-cols-[360px_1fr] md:gap-12 items-center">
-    <!-- Photo -->
-    <div class="rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-sage/30">
+
+<section id="about" class="relative bg-bg">
+  <div class="container py-16 md:py-24 grid gap-12 md:grid-cols-[auto_1fr] items-center"> <!-- md:grid-cols-2 -->
+    <!-- Profile image -->
+    <div class="flex justify-center md:justify-end">
       <img
         src={profile.src}
-        alt="Dominique Newman, LCSW"
-        class="w-full h-full object-cover"
-        width="720"
-        height="720"
+        alt={SITE.images.profileAlt}
+        class=`w-60 h-60 md:w-72 md:h-72 object-cover shadow-lg ${shapeClass}`
+        width="600"
+        height="600"
         loading="lazy"
       />
     </div>
 
-    <!-- Copy -->
-    <div>
+    <!-- About v1 -->
+     <div>
       <h2 class="font-serif text-deep text-3xl md:text-4xl font-semibold mb-3">
         Meet Dominique Newman, LCSW
       </h2>
@@ -34,10 +38,24 @@ import profile from "../assets/images/willow-bud.jpg";
         Individuals &amp; couples • Trauma • Anxiety • Depression • Life transitions
       </p>
     </div>
-  </div>
 
-  <!-- subtle divider -->
-  <div class="container mt-12 md:mt-16">
-    <div class="h-px bg-gradient-to-r from-transparent via-deep/25 to-transparent"></div>
+    <!-- About text v2 -->
+    <!-- <div>
+      <h2 class="font-serif text-primary text-3xl md:text-4xl font-semibold mb-4">
+        About
+      </h2>
+      <p class="text-text/90 leading-relaxed mb-4">
+        I’m a licensed mental health counselor dedicated to providing a safe,
+        compassionate, and supportive environment for clients. My approach
+        blends evidence-based practices with a warm, personalized connection
+        to help individuals navigate challenges and work toward meaningful
+        growth.
+      </p>
+      <p class="text-text/90 leading-relaxed">
+        Whether you’re coping with anxiety, depression, life transitions, or
+        simply seeking support, I’m here to walk alongside you on your journey
+        to wellness.
+      </p>
+    </div> -->
   </div>
 </section>
