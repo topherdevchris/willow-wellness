@@ -25,7 +25,7 @@ export const SITE = {
     ok: "OK",
   },
   footer: {
-    credit: "Site by TopherDev Studio",
+    credit: "Site by Studio Zero",
   },
 };
 

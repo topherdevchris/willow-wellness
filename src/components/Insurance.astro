@@ -2,13 +2,20 @@
 const almaUrl = "https://secure.helloalma.com/providers/dominique-newman/"; // replace if needed
 // Replace the list below with the exact providers from her Alma profile.
 const insurance = [
-  { name: "Aetna" },
-  { name: "Cigna" },
-  { name: "UnitedHealthcare" },
-  { name: "Oxford" },
-  { name: "Oscar Health" },
+  { name: "Aetna",
+   },
+  { name: "Cigna",
+   },
+  { name: "UnitedHealthcare",
+   },
+  { name: "Oxford",
+   },
+  { name: "Oscar Health",
+   },
   // { name: "Empire/BCBS" },
-  { name: "Self-pay available" },
+  { name: "Self-pay available",
+    other: true,
+   },
 ];
 ---
 <section id="insurance" class="bg-cream py-14 md:py-20">
@@ -19,18 +26,32 @@ const insurance = [
       </h2>
       <p class="text-ink/90">
         Dominique partners with select insurance plans and also offers self-pay options.
-        You can view current availability, verified insurance details, and fees through Alma.
+        You can view current availability, verified insurance details, and fees directly through Alma.
       </p>
     </div>
 
     <!-- Cards -->
+     <p class="text-ink/90">
+        Accepted insurance:
+      </p>
     <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {insurance.map((i) => (
-        <div class="rounded-xl bg-sage/20 border border-deep/10 px-5 py-4">
-          <p class="font-medium text-deep">{i.name}</p>
-        </div>
+        !i.other && 
+            <div class="rounded-xl bg-sage/20 border border-deep/10 px-5 py-4">
+            <p class="font-medium text-deep">{i.name}</p>
+          </div>
       ))}
-      <!-- Add/remove cards as needed -->
+    </div>
+    <p class="text-ink/90">
+        Other:
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {insurance.map((i) => (
+        i.other && 
+            <div class="rounded-xl bg-sage/20 border border-deep/10 px-5 py-4">
+            <p class="font-medium text-deep">{i.name}</p>
+          </div>
+      ))}
     </div>
 
     <!-- Alma CTA -->
